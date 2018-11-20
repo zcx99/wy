@@ -1,0 +1,203 @@
+(function($){
+	$.fn.banner = function(options){   
+		var defaults = {
+			auto   : true,///自动播放
+			hand   : true, ///鼠标移到图片上是否停止动画
+			speed  : 500,//////动画速度
+			width  : 704,///////图片宽度
+			height : 396,//////图片高度
+			time   : 3142,/////自动播放时间时隔
+			active : 0,///////默认显示的图片
+			skew   : -80 //小图片偏移大图
+		};
+			
+			var options = $.extend(defaults,options);
+			var auto = options.auto;
+			var hand = options.hand;
+			var speed = options.speed;
+			var width = options.width;
+			var height = options.height;
+			var active = options.active;
+			var time = options.time;
+			var skew = options.skew;
+			var _this = $(this);
+			var skew1 = width-width*.8-skew;///右1
+			var skew2 = width-width*.6-skew*2;/////右2
+			var height1 = height*.8;
+			var height2 = height*.6;
+			var number = _this.find('li').length;
+			var numWidth = number * 18;
+			var _left = (width - numWidth) / 2;
+			var str = '';
+			
+			_this.find("li").each(function(i) {
+				str += '<span></span>'
+			});
+			_this.find('.number').width(numWidth).html(str);
+			_this.find('.number').css('left', _left);
+			_this.find('.number span:first').addClass('on');
+			function cur(ele, currentClass) {///聚焦点
+				ele = $(ele) ? $(ele) : ele;
+				ele.addClass(currentClass).siblings().removeClass(currentClass)
+			}
+
+			function slide(num) {
+				if (_this.find('ul').is(':animated') == false) {
+					var top2 = (height-height1)/2;
+					var top3 = (height-height2)/2;
+					for(var i = 0; i<number; i++){
+						_this.find('li').eq(i).attr('hidden','yes');
+					};
+					if(number>=5){
+						if(number==num+4){
+							_this.find('li').eq(num).removeAttr('hidden').animate({////显示=1
+								'width':'100%','height':height,'left':'0', 'top':'0', 'z-index':'3','opacity':'1'
+							},speed);
+							_this.find('li').eq(num+1).removeAttr('hidden').animate({/////右1=2
+								'width':'80%','height':height1,'left':skew1, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+							
+							_this.find('li').eq(number-2).removeAttr('hidden').animate({////右2=3
+								'width':'60%','height':height2,'left':skew2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							_this.find('li').eq(number-1).removeAttr('hidden').animate({/////左2=4
+								'width':'60%','height':height2,'left':skew*2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							
+							_this.find('li').eq(0).removeAttr('hidden').animate({////左1=5
+								'width':'80%','height':height1,'left':skew, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+							
+						}else if(number==num+3){
+							_this.find('li').eq(num).removeAttr('hidden').animate({////显示=1
+								'width':'100%','height':height,'left':'0', 'top':'0', 'z-index':'3','opacity':'1'
+							},speed);
+							_this.find('li').eq(number-2).removeAttr('hidden').animate({/////右1=2
+								'width':'80%','height':height1,'left':skew1, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+							
+							_this.find('li').eq(num+2).removeAttr('hidden').animate({////右2=3
+								'width':'60%','height':height2,'left':skew2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							_this.find('li').eq(0).removeAttr('hidden').animate({/////左2=4
+								'width':'60%','height':height2,'left':skew*2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							
+							_this.find('li').eq(1).removeAttr('hidden').animate({////左1=5
+								'width':'80%','height':height1,'left':skew, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+						}
+						else if(number==num+2){
+							_this.find('li').eq(num).removeAttr('hidden').animate({////显示=1
+								'width':'100%','height':height,'left':'0', 'top':'0', 'z-index':'3','opacity':'1'
+							},speed);
+							_this.find('li').eq(num+1).removeAttr('hidden').animate({/////右1=2
+								'width':'80%','height':height1,'left':skew1, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+							
+							_this.find('li').eq(0).removeAttr('hidden').animate({////右2=3
+								'width':'60%','height':height2,'left':skew2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							_this.find('li').eq(1).removeAttr('hidden').animate({/////左2=4
+								'width':'60%','height':height2,'left':skew*2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							
+							_this.find('li').eq(2).removeAttr('hidden').animate({////左1=5
+								'width':'80%','height':height1,'left':skew, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+						}
+						else if(number==num+1){
+							_this.find('li').eq(num).removeAttr('hidden').animate({////显示=1
+								'width':'100%','height':height,'left':'0', 'top':'0', 'z-index':'3','opacity':'1'
+							},speed);
+							_this.find('li').eq(0).removeAttr('hidden').animate({/////右1=2
+								'width':'80%','height':height1,'left':skew1, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+							
+							_this.find('li').eq(1).removeAttr('hidden').animate({////右2=3
+								'width':'60%','height':height2,'left':skew2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							_this.find('li').eq(2).removeAttr('hidden').animate({/////左2=4
+								'width':'60%','height':height2,'left':skew*2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							
+							_this.find('li').eq(3).removeAttr('hidden').animate({////左1=5
+								'width':'80%','height':height1,'left':skew, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+						}
+						else{
+							_this.find('li').eq(num).removeAttr('hidden').animate({////显示=1
+								'width':'100%','height':height,'left':'0', 'top':'0', 'z-index':'3','opacity':'1'
+							},speed);
+							_this.find('li').eq(num+1).removeAttr('hidden').animate({/////右1=2
+								'width':'80%','height':height1,'left':skew1, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+							
+							_this.find('li').eq(num+2).removeAttr('hidden').animate({////右2=3
+								'width':'60%','height':height2,'left':skew2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							_this.find('li').eq(num+3).removeAttr('hidden').animate({/////左2=4
+								'width':'60%','height':height2,'left':skew*2, 'top':top3, 'z-index':'1','opacity':'.6'
+							},speed);
+							
+							_this.find('li').eq(num+4).removeAttr('hidden').animate({////左1=5
+								'width':'80%','height':height1,'left':skew, 'top':top2, 'z-index':'2','opacity':'.7'
+							},speed);
+						}
+					}else{
+						alert('不能少于5张图')
+					}
+					
+					_this.find('li').each(function(index){
+						if($(this).attr('hidden')){
+							$(this).css({'width':'60%','height':height2,'left':skew*-2,'top':top3,'opacity':'0'});
+						};
+					});
+
+					cur(_this.find('.number span').eq(active), 'on')
+				}
+			}
+			slide(active);
+			_this.find('.number span').click(function() {
+				active = $(this).index();
+				slide(active);
+				cur(_this.find('.number span').eq(active), 'on')
+			});
+			_this.find('.prev').click(function(){
+				active=-1
+				if(active<=0){
+					active=number;
+				}
+				slide(active)
+			});
+			_this.find('.next').click(function(){
+				active+=1
+				if(active>=number){
+					active=0;
+				}
+				slide(active)
+			});
+			function start() {
+				auto = setInterval(function() {
+					active+=1
+					if(active>=number){
+						active=0;
+					}
+					slide(active)
+				},
+				time)
+			};
+			if (auto){
+				start();
+			};
+			function handOn (){
+				if (hand) clearInterval(auto);
+			};
+			_this.hover(function() {
+				handOn()
+			},
+			function() {
+				start()
+			});
+		};
+})(jQuery);

@@ -1,0 +1,29 @@
+var footer ='<div class="help">'+
+    	'<ul>'+
+        	'<li>'+
+            	'<h4>我们的产品</h4>'+
+                '<p><a href="tv.html">MoreTV电视版</a></p>'+
+                '<p><a href="mobile.html">手机助手</a></p>'+
+                '<p><a href="weixin.html">微信订阅</a></p>'+
+           '</li>'+
+            '<li>'+
+            	'<h4>MoreTV</h4>'+
+                '<p><a href="about.html">关于我们</a></p>'+
+                '<p><a href="join.html">加入我们</a></p>'+
+                '<p><a href="contact.html">联系商务合作</a></p>'+
+            '</li>'+
+            '<li>'+
+            	'<h4>帮助与支持</h4>'+
+                '<p><a href="http://bbs.moretv.com.cn/forum-38-1.html" target="_blank">反馈意见</a></p>'+
+                '<p><a href="copyright.html">知识产权保护声明</a></p>'+
+            '</li>'+
+        '</ul>'+
+		'<div class="about">'+
+        	'<a href="http://weibo.com/moretv4u" target="_blank" class="sina">&nbsp;</a>'+
+            '<a href="javascript:void(0);" class="weixin">'+
+			'<span class="code" id="code"><img src="imgs/code.png" width="107" height="107" /></span>'+
+			'</a>'+
+        '</div>'+
+		'<div class="clear">&nbsp;</div>'+
+    '</div>'+
+	'<div class="copyright">MoreTV & 千杉网络技术发展有限公司 版权所有<br>沪ICP备12027525号</div>'

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://www.dpplayer.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>大屏播放器</title>
+<meta name="description" content="大屏播放器是一款免费的智能电视播放器，其特色是让小白也能通过简单的两步打造属于自己的专属电视应用！">
+<meta name="keywords" content="大屏播放器,智能电视直播,智能电视点播,小白也能做智能电视直播应用,自己打造智能电视应用">
+<link rel="shortcut icon" href="http://www.dpplayer.com/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="./index_files/css.css">
+<script type="text/javascript" src="./index_files/jquery.js.下载"></script>
+<script type="text/javascript" src="./index_files/pic.js.下载"></script>
+
+<script type="text/javascript" src="./index_files/html.js.下载"></script>
+</head>
+
+<body>
+<!--头部-->
+<div class="headerBg headerTv">
+	<div class="header">
+    	<div class="nav" id="nav">
+        	<a href="http://www.dpplayer.com/#" class="logo"><img src="./index_files/logo.png" width="150" height="106"></a>
+            <ul>
+           	<li>
+                	<a href="http://www.dpplayer.com/">官网首页</a>
+                    <span class="line">&nbsp;</span>
+                </li> 
+
+							
+            </ul>
+        </div><!--end nav-->
+        <div class="banner">
+        	<div class="tv">
+                <h3>大屏播放器个人版永久免费</h3>
+                <span class="title">&nbsp;</span>
+				<form name="dpplayer_gen" id="playerForm" method="post" action="http://box.hdpfans.com/apk/make.php">				
+                <ul>
+				<center>
+                    <li>
+                     <input name="data_access" type="text" id="data_access" class="mytxt" value="请输入数据接口地址，必须以txt或者json结尾" onmouseover="this.style.borderColor=&#39;#FF6600&#39;" onmouseout="this.style.borderColor=&#39;&#39;" onfocus="if (value ==&#39;请输入数据接口地址，必须以txt或者json结尾&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;请输入数据接口地址，必须以txt或者json结尾&#39;}" style=""> 
+                    </li>
+                    <li>
+                       <input name="app_name" type="text" id="app_name" class="mytxt" value="请输入名称: 例如 我的直播" onmouseover="this.style.borderColor=&#39;#FF6600&#39;" onmouseout="this.style.borderColor=&#39;&#39;" onfocus="if (value ==&#39;请输入名称: 例如 我的直播&#39;){value =&#39;&#39;}" onblur="if (value ==&#39;&#39;){value=&#39;请输入名称: 例如 我的直播&#39;}" style="border-color: rgb(255, 102, 0);">
+                    </li>
+				</center>
+                </ul>
+				<script>
+					function checkData(){
+						if(!document.getElementById('data_access').value){
+							alert('数据接口不能为空');
+							document.getElementById('data_access').focus();
+						}else if (!document.getElementById('app_name').value){
+							alert('应用名称不能为空');
+							document.getElementById('app_name').focus();
+						}else if (document.getElementById('data_access').value.slice(-3) != 'txt' && document.getElementById('data_access').value.slice(-4) != 'json'){
+							alert('数据接口地址必须以txt或者json结尾');
+						}else{
+							var f = document.getElementById('playerForm');
+							f.submit();
+						}
+					}
+				</script>
+				 <div class="button">
+                	<div class="downBox">
+                        <a href="http://www.hdpfans.com/thread-497273-1-1.html" target="_blank" name="download" class="download">
+                            使用教程
+                            <span>&nbsp;</span>
+                        </a>                      
+                    </div>
+					<div class="downBox">
+						<a href="javascript:void(0);" class="download" onclick="checkData();">
+							点击生成
+						<span>&nbsp;</span>
+						</a>
+					</div>                      
+                </div>
+			
+				</form>		
+            </div>
+        </div><!--end banner-->
+    </div><!--end header-->
+</div><!--end headerBg-->
+<div class="clear"></div>
+<!--主要内容-->
+<div class="page" id="page"><span class="on">&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div><!--end page-->
+<div class="main">
+	
+	<div class="box">
+    	<div class="top">
+        	<h2>商业版</h2>
+            <p>强大的后台节目源和会员管理，完善的P2P技术，成熟的TV和移动客户端！</p>
+			<br>
+        </div>
+        <div>
+		<center>
+		<img src="./index_files/DPc.jpg" alt="大屏播放器商业版">
+		</center>
+
+        </div><!--end tvBanner-->
+    </div><!--end box-->
+	
+	
+
+</div><!--end main-->
+<!--尾部-->
+<div class="footer">
+	<div id="footer">
+		<div class="help">
+    		<ul>
+            	<li>
+            		<h4>大屏播放器官网</h4>
+            		<p><a href="mailto:dpplayer@163.com">联系我们</a></p>
+
+            		</li>
+            	<li>
+            		<h4>帮助与支持</h4>
+            		<p><a href="mailto:dpplayer@163.com">反馈意见</a></p>
+        
+                </li>
+                   </ul>
+        	<div class="clear">&nbsp; 
+        		<script src="./index_files/stat.php" language="JavaScript"></script><script src="./index_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1254104290" target="_blank" title="站长统计">站长统计</a>
+        	</div>
+	  
+       </div><!--end help-->
+	   
+	          <div class="blogroll">
+       		       		<ul>
+       		<h4>友情链接</h4>
+			    <li>
+       				<a href="http://www.hdpfans.com/" target="_blank">高清范</a>
+       			</li>
+                <li>
+       				<a href="http://down.hdpfans.com/" target="_blank">电视应用下载</a>
+       			</li>
+				<li>
+       				<a href="http://product.hdpfans.com/" target="_blank">盒子产品库</a>
+       			</li>
+       		 </ul>
+      </div><!--end blogroll-->
+
+
+
+
+<div class="copyright">Copyright © 2018 dpplayer All Rights Reserved.<br></div>
+</div>
+
+</div><!--end footer-->
+<script type="text/javascript" src="./index_files/main.js.下载"></script>
+
+
+
+
+
+
+</body></html>
